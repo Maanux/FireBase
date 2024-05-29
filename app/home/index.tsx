@@ -1,5 +1,3 @@
-// app/index.tsx
-import { faker } from "@faker-js/faker";
 import { Stack, useRouter, useFocusEffect } from "expo-router";
 import { Alert, FlatList, Text, View } from "react-native";
 import { useCallback } from "react";
@@ -36,7 +34,7 @@ export default function Home() {
 
       <StyledButton
         title="Ir para o formulário de novo pet"
-        onPress={() => router.push("./FormPet")}
+        onPress={() => router.push("/home/FormPet")}
       />
 
       {loading ? (

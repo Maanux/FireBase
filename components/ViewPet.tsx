@@ -1,5 +1,6 @@
 import { useRouter } from "expo-router";
 import { Alert, Text, View } from "react-native";
+
 import Pet from "../types/Pet";
 import StyledButton from "./StyledButton";
 
@@ -22,14 +23,14 @@ export default function ViewPet({ pet, onDelete }: ViewPetProps) {
 
       <View style={{ flexDirection: "row" }}>
         <StyledButton
-          title="Ver Detalhes do Pet"
+          title="Editar Pet"
           onPress={() => {
             if (pet.id) {
-              router.push(`/home/${pet.id}`);
+              router.push(`/home/EditPet?id=${pet.id}`);
             } else {
               Alert.alert(
-                "Erro ao visualizar",
-                "Não é possível acessar os detalhes do pet porque ele não tem um id!"
+                "Erro ao editar",
+                "Não é possível editar o pet porque ele não tem um id!"
               );
             }
           }}
